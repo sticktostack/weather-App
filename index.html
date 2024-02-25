@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="card">
+            
+            <div class="header">
+                <input id="searchbox" type="text" placeholder="Enter city name"> <button id="searchbutton"><i
+                        class="ri-search-line"></i></button>
+            </div>
+            <div class="error">
+                <img src="error-404.png" alt="">
+            </div>`
+            <div class="content">
+            <div class="weather">
+                <img id="weathericon" src="cloudy.png">
+                <h2 id="temparature">00°C</h2>
+                <h2 id="cityname">City name</h2>
+                <h2 id="status">status</h2>
+            </div>
+            <div class="lower">
+                <div class="humidity">
+                    <i id="humidityicon" class="ri-contrast-drop-fill"></i>
+                    <p>Humidity</p>
+                    <h3 id="humidity">0%</h3>
+
+                </div>
+                <div class="airindex">
+                    <i id="airindexicon" class="ri-windy-fill"></i>
+                    <p>Wind speed</p>
+
+                    <h3 id="airindex">0km/h</h3>
+                </div>
+            </div>
+            <div class="lowertwo">
+                <div class="max">
+                    <i id="maxtempicon" class="ri-temp-hot-line"></i>
+                    <p>Max temparature</p>
+                    <h4 id="maxtemp">00</h4>
+                </div>
+                <div class="min">
+                    <i id="mintempicon" class="ri-temp-cold-line"></i>
+                    <p>Min temparature</p>
+                    <h4 id="mintemp">00</h4>
+                </div>
+            </div>
+            <div class="lowerthree">
+                <div class="visiblity">
+                    <i class="ri-eye-line"></i>
+                    <p id="vb">Visiblity</p>
+                    <h4 id="visiblity">00</h4>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
