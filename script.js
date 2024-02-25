@@ -9,12 +9,13 @@ const maxtemp = document.getElementById('maxtemp') ;
 const mintemp = document.getElementById('mintemp') ;
 const visiblity = document.getElementById('visiblity') ;
 const weathericon = document.getElementById('weathericon') ;
+const errorClass = document.querySelector('.error')
 
 const apiKey = `291f507d5c9460e28632d562c2ba79af`
 
 function weather(city){
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
-
+    
     .then((response)=>{
         return response.json()
     }).then((data)=>{
@@ -27,7 +28,6 @@ function weather(city){
         maxtemp.innerHTML = Math.floor(data.main.temp_max) + '°C'
         mintemp.innerHTML = Math.floor(data.main.temp_min) + '°C'
         visiblity.innerHTML = Math.floor(data.visibility * 0.001) + 'km'
-
         if(data.weather[0].description == 'haze'){
             weathericon.src = './cloudy.png'
         }else if(data.weather[0].description == 'clear sky'){
@@ -43,6 +43,9 @@ function weather(city){
         }else if(data.weather[0].description == 'broken clouds'){
             weathericon.src = './storm.png'
         }
+        else if(data.weather[0].description == 'light rain'){
+            weathericon.src = './rainy2.png'
+        }
         document.querySelector('.content').style.display = 'block'
         console.log(data);
     })
@@ -50,7 +53,6 @@ function weather(city){
         console.log(error);
     })
 }
-
 // button wroking 
 searchbutton.addEventListener('click',()=>{
     weather(searchbox.value)
